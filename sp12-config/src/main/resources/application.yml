@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: config-server 
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AkaXH777/sp-config
+          searchPaths: config
+          username: AkaXH777
+          password: Lhh14795386717
+  rabbitmq:
+    host: 192.168.64.140
+    port: 15672
+    username: admin
+    password: admin          
+    
+server:
+  port: 6001
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
